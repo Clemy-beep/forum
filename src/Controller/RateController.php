@@ -11,6 +11,14 @@ use Exception;
 
 class RateController
 {
+    public function all($id)
+    {
+        $em = EntityManagerHelper::getEntityManager();
+        $ratesRepository = new AbstractRepository($em, new ClassMetadata("App\Entity\Rate"));
+        $rates = $ratesRepository->findAll();
+
+       include './src/View/AllRates.php';
+    }
 
     public function add($id)
     {

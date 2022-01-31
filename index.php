@@ -21,6 +21,7 @@ $router->post('/modify-article/:id', "App\Controller\ArticleController@modify");
 $router->get('/rate-article/:id', "App\Controller\RateController@add");
 $router->post('/rate-article/:id', "App\Controller\RateController@add");
 $router->get('/delete-article/:id', "App\Controller\ArticleController@delete");
+$router->get('/all-rates/:id', "App\Controller\RateController@all");
 $router->get('/all-articles', "App\Controller\ArticleController@all");
 $router->get('/', "App\Controller\AppController@index");
 

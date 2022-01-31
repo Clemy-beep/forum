@@ -22,8 +22,8 @@
             echo "<p>$content</p>";
             echo "<a href='http://127.0.0.6/modify-article/$id'>Edit Article</a>";
             echo "<a href='http://127.0.0.6/delete-article/$id'> Delete Article</a><br>";
-            echo "<a href='http://127.0.0.6/rate-article/$id'>Delete Rate</a>";
             echo "<a href='http://127.0.0.6/rate-article/$id'> Rate Article</a><br>";
+            echo "<a href='http://127.0.0.6/all-rates/$id'>All rates</a>";
         }
     } else echo "no articles";
     ?>
