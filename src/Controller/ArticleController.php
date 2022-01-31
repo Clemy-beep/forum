@@ -46,18 +46,22 @@ class ArticleController
 
     public function modify($id)
     {
+
+
         $em = EntityManagerHelper::getEntityManager();
         $articleRepository = new AbstractRepository($em, new ClassMetadata("App\Entity\Article"));
         $article = $articleRepository->find($id);
-        $article->setTitle($_POST['title']);
-        $article->setResume($_POST['resume']);
-        try {
-            $em->flush();
-            echo "article modified";
-        } catch (Exception $e) {
-            $msg = $e->getMessage();
-            $code = $e->getCode();
-            echo "Error $code : $msg";
+        if (!empty($_POST)) {
+            $article->setTitle($_POST['title']);
+            $article->setResume($_POST['resume']);
+            try {
+                $em->flush();
+                echo "article modified";
+            } catch (Exception $e) {
+                $msg = $e->getMessage();
+                $code = $e->getCode();
+                echo "Error $code : $msg";
+            }
         }
         include './src/View/EditArticle.php';
     }
