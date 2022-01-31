@@ -17,17 +17,19 @@ class RateController
         $em = EntityManagerHelper::getEntityManager();
         $articleRepository = new AbstractRepository($em, new ClassMetadata("App\Entity\Article"));
         $article = $articleRepository->find($id);
-        $user = new User($_POST['usermail'], $_POST['firstname'], $_POST['lastname'], $_POST['username']);
-        $rate = new Rate($_POST['rate'], (empty($_POST['comment'])) ? null : $_POST['comment'], $user, $article);
-        $em->persist($user);
-        $em->persist($rate);
-        try {
-            $em->flush();
-            echo "article rated";
-        } catch (Exception $e) {
-            $msg = $e->getMessage();
-            $code = $e->getCode();
-            echo "Error $code : $msg";
+        if (!empty($_POST)) {
+            $user = new User($_POST['usermail'], $_POST['firstname'], $_POST['lastname'], $_POST['username']);
+            $rate = new Rate($_POST['rate'], (empty($_POST['comment'])) ? null : $_POST['comment'], $user, $article);
+            $em->persist($user);
+            $em->persist($rate);
+            try {
+                $em->flush();
+                echo "article rated";
+            } catch (Exception $e) {
+                $msg = $e->getMessage();
+                $code = $e->getCode();
+                echo "Error $code : $msg";
+            }
         }
         include './src/View/RateArticle.php';
     }

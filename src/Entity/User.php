@@ -18,7 +18,7 @@ class User extends Person {
     use PersonalInfos{
      PersonalInfos::__construct as traitConstruct;
     }
-    private function __construct($e, $f, $l, $u) {
+    public function __construct($e, $f, $l, $u) {
         parent::__construct($e);
         $this->traitConstruct($f, $l);
         $this->username = $u;
