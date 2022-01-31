@@ -23,10 +23,10 @@ $config->setAutoGenerateProxyClasses(1);
 // database configuration parameters
 $conn = array(
     'driver' => 'pdo_mysql',
-    'user'     => getenv('APP_USER'),
-    'password' => getenv('APP_PASS'),
-    'dbname'   => getenv('APP_BDD'),
-    'host'     => getenv('APP_HOST')
+    'user'     => 'root',
+    'password' => null,
+    'dbname'   => 'forum',
+    'host'     => '127.0.0.1'
 );
 
 // obtaining the entity manager
