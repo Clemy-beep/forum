@@ -50,7 +50,7 @@ class RateController
         $em->remove($rate);
         try {
             $em->flush();
-            echo "rate modified";
+            echo "rate deleted";
         } catch (Exception $e) {
             $msg = $e->getMessage();
             $code = $e->getCode();

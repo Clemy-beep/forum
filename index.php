@@ -12,8 +12,9 @@ require_once('vendor/autoload.php');
 
 use Router\Router;
 
-$router = new Router($_GET['url']);
+$router = new Router($_GET['url']);$
 
+$router->get('/delete-rate/:id', "App\Controller\RateController@delete");
 $router->get('/create-article', "App\Controller\ArticleController@create");
 $router->post('/create-article', "App\Controller\ArticleController@create");
 $router->get('/modify-article/:id', "App\Controller\ArticleController@modify");
