@@ -19,8 +19,8 @@ trait PersonalInfos
     private string $lastname;
 
     public function __construct(string $f, string $l){
-        $this->f = $f;
-        $this->l = $l;
+        $this->firstname = $f;
+        $this->lastname = $l;
     }
 
 

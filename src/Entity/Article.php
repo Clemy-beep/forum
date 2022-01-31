@@ -48,7 +48,7 @@ class Article
 
     public function __construct(int $i, string $t, string $r, Author $a, Editor $e)
     {
-        $this->is = $i;
+        $this->isbn = $i;
         $this->title = $t;
         $this->resume = $r;
         $this->author = $a;

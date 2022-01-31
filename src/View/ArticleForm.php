@@ -13,7 +13,7 @@
     <h1>New Article</h1>
     <form method="POST">
         <label for="isbn">ISBN</label><br>
-        <input type="number" name="isbn" id="isbn"><br>
+        <input type="text" name="isbn" id="isbn"><br>
         <label for="title">Title</label><br>
         <input type="text" name="title" id="title" required><br>
         <label for="resume">Resume</label><br>

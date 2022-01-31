@@ -17,12 +17,13 @@
         foreach ($articles as $key => $article) {
             $title = $article->getTitle();
             $content = $article->getResume();
+            $id = $article->getId();
             echo "<h2>$title</h2>";
             echo "<p>$content</p>";
             echo "<a href='http://127.0.0.6/modify-article/$id'>Edit Article</a>";
-            echo "<a href='http://127.0.0.6/delete-article/$id'>Delete Article</a>";
-            echo "<a href='http://127.0.0.6/rate-article/$id'>Delete Article</a>";
-            echo "<a href='http://127.0.0.6/rate-article/$id'>Rate Article</a>";
+            echo "<a href='http://127.0.0.6/delete-article/$id'> Delete Article</a><br>";
+            echo "<a href='http://127.0.0.6/rate-article/$id'>Delete Rate</a>";
+            echo "<a href='http://127.0.0.6/rate-article/$id'> Rate Article</a><br>";
         }
     } else echo "no articles";
     ?>

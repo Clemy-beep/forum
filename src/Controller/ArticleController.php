@@ -23,6 +23,7 @@ class ArticleController
     public function create()
     {
         if (!empty($_POST)) {
+            var_dump($_POST);
             $_POST = array_map('trim', array_map('strip_tags', $_POST));
             $em = EntityManagerHelper::getEntityManager();
             $editor = new Editor($_POST['editor_mail'], $_POST['editor']);

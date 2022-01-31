@@ -9,4 +9,8 @@ final class AppController
     {
        include './src/View/Homepage.php';
     }
+
+    public function error404(): void {
+        include "./404.html";
+    }
 }

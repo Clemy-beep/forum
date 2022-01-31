@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Doctrine\ORM\Tools\Setup;
@@ -14,7 +15,7 @@ $isDevMode = true;
 $proxyDir = __DIR__."/src/Proxies";
 $cache = null;
 $useSimpleAnnotationReader = false;
-$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src/Entity"), $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader);
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/src/Entity"), $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader);
 $config->setAutoGenerateProxyClasses(1);
 // or if you prefer yaml or XML
 // $config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
@@ -31,4 +32,3 @@ $conn = array(
 
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);
-
