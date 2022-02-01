@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <?php include './src/View/Template/UnloggedHeader.php'; ?>
-    <h1>Welcome </h1>
+    <?php include './src/View/Template/Header.html'; ?>
+    <h1>Welcome <?= $_SESSION['username'] ?> </h1>
 </body>
 
 </html>

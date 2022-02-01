@@ -14,7 +14,15 @@ use Router\Router;
 
 $router = new Router($_GET['url']);
 
+$router->get('/edit-rate/:id', "App\Controller\RateController@modify");
+$router->post('/edit-rate/:id', "App\Controller\RateController@modify");
+$router->get('/log-out', "App\Controller\AppController@logout");
+$router->get('/home', "App\Controller\AppController@home");
 $router->get('/delete-rate/:id', "App\Controller\RateController@delete");
+$router->get('/sign-up', "App\Controller\UserController@register");
+$router->post('/sign-up', "App\Controller\UserController@register");
+$router->get('/sign-in', "App\Controller\AppController@login");
+$router->post('/sign-in', "App\Controller\AppController@login");
 $router->get('/create-article', "App\Controller\ArticleController@create");
 $router->post('/create-article', "App\Controller\ArticleController@create");
 $router->get('/modify-article/:id', "App\Controller\ArticleController@modify");
@@ -22,6 +30,7 @@ $router->post('/modify-article/:id', "App\Controller\ArticleController@modify");
 $router->get('/rate-article/:id', "App\Controller\RateController@add");
 $router->post('/rate-article/:id', "App\Controller\RateController@add");
 $router->get('/delete-article/:id', "App\Controller\ArticleController@delete");
+$router->get('/delete-rate/:id', "App\Controller\RateController@delete");
 $router->get('/all-rates/:id', "App\Controller\RateController@all");
 $router->get('/all-articles', "App\Controller\ArticleController@all");
 $router->get('/', "App\Controller\AppController@index");

@@ -11,8 +11,8 @@
 <body>
     <?php include './src/View/Template/Header.html' ?>
     <h1>All rates for article n°<?= $id ?></h1>
-    <<?php
-        if (!empty($rates)) {
+    <?php
+        if (!empty($rates) || isset($rates)) {
             foreach ($rates as $key => $rate) {
                 $article = $rate->getArticle();
                 $articleId= $article->getId();
@@ -23,11 +23,12 @@
                     $comment = $rate->getComment();
                     echo "$rated out of 5 <br>";
                     if ($comment !== null) echo "$comment <br>";
-                    echo "Author : $author";
-                    echo "<a href='http://127.0.0.6/delete-rate/$rateId'>Delete rate</a>";
-                }
+                    echo "Author : $author <br>";
+                    echo "<a href='http://127.0.0.6/edit-rate/$rateId'>Edit rate</a><br>";
+                    echo "<a href='http://127.0.0.6/delete-rate/$rateId'>Delete rate</a><br><br>";
+                }else echo "<p>No rates for this article</p>";
             }
-        } else echo "No rates for this article";
+        } 
         ?> </body>
 
 </html>
